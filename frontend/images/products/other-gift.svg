@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#94A3B8"/>
+      <stop offset="1" stop-color="#475569"/>
+    </linearGradient>
+    <radialGradient id="h" cx="0.28" cy="0.18" r="0.75">
+      <stop offset="0" stop-color="rgba(255,255,255,.35)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#g)"/>
+  <rect width="640" height="480" fill="url(#h)"/>
+  <circle cx="572" cy="66" r="10" fill="rgba(255,255,255,.28)"/>
+  <circle cx="596" cy="112" r="6" fill="rgba(255,255,255,.22)"/>
+  <g fill="none" stroke="rgba(255,255,255,.9)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="228" y="216" width="184" height="148" rx="12"/>
+   <path d="M228 216 h184 v48 h-184 z" stroke-linejoin="round"/>
+   <path d="M320 216 v148" stroke-linecap="round"/>
+   <path d="M320 200 c-4 -16 -24 -24 -38 -14 c-8 6 -6 20 6 26 c12 6 32 4 32 4 z" stroke-linejoin="round"/>
+   <path d="M320 200 c 4 -16 24 -24 38 -14 c 8 6 6 20 -6 26 c -12 6 -32 4 -32 4 z" stroke-linejoin="round"/>
+  </g>
+</svg>
