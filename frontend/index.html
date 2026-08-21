@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendio — Buy &amp; Sell Anything Nearby</title>
+  <meta name="description" content="Vendio is your local marketplace. Browse electronics, fashion, furniture, vehicles and more — buy and sell anything right in your neighborhood.">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Vendio home">
+        <img src="images/logo.svg" alt="" width="38" height="38">
+        <span class="brand-mark">Vendio<span class="tag">Marketplace</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" tabindex="-1">
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Primary">
+        <a class="nav-link is-active" href="index.html">Browse</a>
+        <a class="nav-link" href="#categories">Categories</a>
+        <a class="nav-link" href="add-product.html">Sell</a>
+        <div class="nav-cta">
+          <a class="btn btn-ghost btn-sm" href="login.html">Log in</a>
+          <a class="btn btn-primary btn-sm" href="signup.html">Get started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <span class="eyebrow">✦ Vendio Marketplace</span>
+          <h1 class="hero-title">Buy &amp; sell anything, <span class="grad-text">right in your neighborhood</span></h1>
+          <p class="hero-sub">
+            From second-hand treasures to brand-new gear — discover thousands of local listings, post yours in minutes, and turn clutter into cash.
+          </p>
+
+          <form class="hero-search" role="search" action="index.html" method="get">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <label class="visually-hidden" for="home-search">Search products</label>
+            <input id="home-search" type="search" name="search" placeholder="Search for products… e.g. iPhone, sofa, bike" autocomplete="off">
+            <button class="btn btn-primary" type="submit">
+              Search
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </form>
+
+          <div class="hero-popular">
+            <span>Popular:</span>
+            <a class="pill" href="index.html?search=iphone">iPhone</a>
+            <a class="pill" href="index.html?search=sofa">Sofa</a>
+            <a class="pill" href="index.html?search=bike">Bike</a>
+            <a class="pill" href="index.html?search=sneakers">Sneakers</a>
+            <a class="pill" href="index.html?search=guitar">Guitar</a>
+          </div>
+
+          <div class="hero-stats">
+            <div><strong>10k+</strong><span>Active listings</span></div>
+            <div><strong>8k+</strong><span>Happy sellers</span></div>
+            <div><strong>100%</strong><span>Free to post</span></div>
+            <div><strong>4.9★</strong><span>Community rating</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Categories ================= -->
+    <section class="section-tight" id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Browse by category</h2>
+            <p class="subtitle">Find exactly what you're looking for.</p>
+          </div>
+          <a class="btn btn-plain btn-sm" href="#featured">View all listings
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="cat-grid">
+          <a class="cat-card" href="index.html?category=electronics">
+            <span class="cat-icon cat-icon-electronics" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+            </span>
+            <span class="cat-name">Electronics</span>
+            <span class="cat-count">1,240 listings</span>
+          </a>
+          <a class="cat-card" href="index.html?category=fashion">
+            <span class="cat-icon cat-icon-fashion" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+            </span>
+            <span class="cat-name">Fashion</span>
+            <span class="cat-count">860 listings</span>
+          </a>
+          <a class="cat-card" href="index.html?category=furniture">
+            <span class="cat-icon cat-icon-furniture" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0Z"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
+            </span>
+            <span class="cat-name">Furniture</span>
+            <span class="cat-count">520 listings</span>
+          </a>
+          <a class="cat-card" href="index.html?category=vehicles">
+            <span class="cat-icon cat-icon-vehicles" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+            </span>
+            <span class="cat-name">Vehicles</span>
+            <span class="cat-count">310 listings</span>
+          </a>
+          <a class="cat-card" href="index.html?category=books">
+            <span class="cat-icon cat-icon-books" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+            </span>
+            <span class="cat-name">Books</span>
+            <span class="cat-count">440 listings</span>
+          </a>
+          <a class="cat-card" href="index.html?category=other">
+            <span class="cat-icon cat-icon-other" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </span>
+            <span class="cat-name">Other</span>
+            <span class="cat-count">690 listings</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Featured listings ================= -->
+    <section class="section" id="featured">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Fresh picks</span>
+            <h2>Featured listings</h2>
+            <p class="subtitle">Hand-picked deals from sellers near you.</p>
+          </div>
+          <a class="btn btn-primary btn-sm" href="add-product.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+            List your item
+          </a>
+        </div>
+
+        <div class="products-grid">
+          <!-- 1 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/electronics-headphones.svg" alt="Wireless over-ear headphones" loading="lazy" width="640" height="480">
+              <span class="badge badge-used">Used</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-electronics">Electronics</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Sony Wireless Headphones</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Brooklyn, NY
+              </div>
+              <div class="product-price">$249</div>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/electronics-phone.svg" alt="iPhone 13 smartphone" loading="lazy" width="640" height="480">
+              <span class="badge badge-used">Used</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-electronics">Electronics</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">iPhone 13 · 128GB</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                San Francisco, CA
+              </div>
+              <div class="product-price">$549</div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/electronics-laptop.svg" alt="MacBook Pro laptop" loading="lazy" width="640" height="480">
+              <span class="badge badge-new">New</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-electronics">Electronics</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">MacBook Pro · M2</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Austin, TX
+              </div>
+              <div class="product-price">$1,199</div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/fashion-sneakers.svg" alt="White sneakers" loading="lazy" width="640" height="480">
+              <span class="badge badge-used">Used</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-fashion">Fashion</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Nike Air Force Sneakers</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Chicago, IL
+              </div>
+              <div class="product-price">$89</div>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/furniture-sofa.svg" alt="Leather sofa" loading="lazy" width="640" height="480">
+              <span class="badge badge-used">Used</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-furniture">Furniture</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Comfy Leather Sofa</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Denver, CO
+              </div>
+              <div class="product-price">$320</div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/vehicles-car.svg" alt="Honda Civic car" loading="lazy" width="640" height="480">
+              <span class="badge badge-featured">Featured</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-vehicles">Vehicles</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Honda Civic 2018</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Miami, FL
+              </div>
+              <div class="product-price">$8,500</div>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/books-novel.svg" alt="Fantasy novel book" loading="lazy" width="640" height="480">
+              <span class="badge badge-used">Used</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-books">Books</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Fantasy Novel Trilogy</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                San Diego, CA
+              </div>
+              <div class="product-price">$12</div>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/other-gift.svg" alt="Acoustic guitar" loading="lazy" width="640" height="480">
+              <span class="badge badge-used">Used</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-other">Other</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Acoustic Guitar</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Atlanta, GA
+              </div>
+              <div class="product-price">$160</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Trust strip ================= -->
+    <section class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div>
+              <h3>Verified sellers</h3>
+              <p>Every account is confirmed with a valid email before they can list.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div>
+              <h3>Secure deals</h3>
+              <p>Meet in public places and pay only when you're happy with the item.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+            </span>
+            <div>
+              <h3>Lightning fast</h3>
+              <p>Post a listing in under two minutes — no hidden fees, ever.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div>
+              <h3>Lovely community</h3>
+              <p>Join 8,000+ neighbours buying and selling on Vendio every day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA banner ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <span class="eyebrow" style="background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.25); color:#fff;">Got something to sell?</span>
+          <h2>Turn what you don't use into cash</h2>
+          <p>Snap a photo, add a few details and your listing is live — free to post, ready to sell.</p>
+          <a class="btn btn-lg" href="add-product.html">Start selling now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="index.html">
+            <img src="images/logo.svg" alt="" width="36" height="36">
+            Vendio
+          </a>
+          <p class="footer-desc">Your local marketplace. Buy and sell electronics, fashion, furniture, vehicles and more — right in your neighborhood.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Marketplace</h4>
+          <a href="index.html">Browse listings</a>
+          <a href="index.html#categories">Categories</a>
+          <a href="add-product.html">Sell an item</a>
+          <a href="my-products.html">My products</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help center</a>
+          <a href="#">Safety tips</a>
+          <a href="#">Report an item</a>
+          <a href="#">Contact us</a>
+        </div>
+
+        <div class="footer-col footer-news">
+          <h4>Stay in the loop</h4>
+          <p>Get fresh local listings and seller tips straight to your inbox.</p>
+          <form class="news-form" action="#" method="post">
+            <label class="visually-hidden" for="news-email">Email address</label>
+            <input class="input" id="news-email" type="email" placeholder="you@example.com" autocomplete="email">
+            <button class="btn btn-primary btn-sm" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Vendio. All rights reserved.</span>
+        <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
