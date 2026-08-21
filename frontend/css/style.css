@@ -980,9 +980,58 @@ p { margin: 0 0 1rem; }
 }
 
 /* ------------------------------------------------------------
+   18b. Logged-in header & product form extras
+   ------------------------------------------------------------ */
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 14px 5px 5px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  background: var(--surface);
+  color: var(--slate-700);
+  font-weight: 600;
+  font-size: .9rem;
+  transition: var(--t);
+}
+.user-chip:hover { border-color: var(--brand-600); color: var(--slate-900); box-shadow: var(--sh-sm); }
+.user-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-500), var(--accent-500));
+  color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: .78rem;
+}
+
+.form-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 26px; align-items: start; }
+.form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 30px; box-shadow: var(--sh-sm); }
+.form-card h2 { font-size: 1.1rem; margin-bottom: 4px; }
+.form-card .form-sub { color: var(--slate-500); font-size: .9rem; margin-bottom: 22px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-actions { display: flex; justify-content: flex-end; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+.dropzone.is-tall { min-height: 320px; }
+.dropzone.has-image { padding: 8px; position: relative; }
+.dropzone.has-image img {
+  width: 100%; height: 100%; min-height: 280px;
+  object-fit: cover; border-radius: calc(var(--r-lg) - 8px);
+}
+.dropzone.has-image .dz-overlay {
+  position: absolute; inset: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: rgba(15, 23, 42, .42);
+  color: #fff; font-weight: 600; font-size: .95rem;
+  border-radius: calc(var(--r-lg) - 8px);
+  opacity: 0; transition: var(--t);
+}
+.dropzone.has-image:hover .dz-overlay { opacity: 1; }
+
+/* ------------------------------------------------------------
    19. Responsive
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .field-row { grid-template-columns: 1fr; }
   .cat-grid { grid-template-columns: repeat(3, 1fr); }
   .products-grid { grid-template-columns: repeat(3, 1fr); }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }

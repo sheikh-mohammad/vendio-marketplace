@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a listing — Vendio</title>
+  <meta name="description" content="Post a new product listing on Vendio. Add photos, price and details to start selling in minutes.">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= Header (logged in) ================= -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Vendio home">
+        <img src="images/logo.svg" alt="" width="38" height="38">
+        <span class="brand-mark">Vendio<span class="tag">Marketplace</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" tabindex="-1">
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Primary">
+        <a class="nav-link" href="index.html">Browse</a>
+        <a class="nav-link" href="my-products.html">My products</a>
+        <a class="nav-link is-active" href="add-product.html">Sell</a>
+        <div class="nav-cta">
+          <a class="user-chip" href="my-products.html">
+            <span class="user-avatar" aria-hidden="true">AK</span>
+            Aisha
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Page head -->
+      <div class="page-head">
+        <div>
+          <span class="eyebrow">Sell on Vendio</span>
+          <h1>Post a new listing</h1>
+          <p>Fill in the details below and your item goes live in minutes.</p>
+        </div>
+        <a class="btn btn-plain" href="my-products.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Back to my products
+        </a>
+      </div>
+
+      <form class="mt-3" action="#" method="post" enctype="multipart/form-data" novalidate>
+        <div class="form-grid">
+
+          <!-- Left: photos -->
+          <div class="form-card">
+            <h2>Product photos</h2>
+            <p class="form-sub">Add a clear photo — listings with photos sell 4× faster.</p>
+
+            <label class="dropzone is-tall" for="product-image">
+              <input type="file" id="product-image" name="image" accept="image/*" required>
+              <span class="dz-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              </span>
+              <span class="dz-title">Click to upload your photo</span>
+              <p class="dz-hint">JPG, PNG or WebP · up to 5MB · square looks best</p>
+            </label>
+            <p class="field-error" id="image-error">A product image is required.</p>
+          </div>
+
+          <!-- Right: details -->
+          <div>
+            <div class="form-card">
+              <h2>Listing details</h2>
+              <p class="form-sub">Tell buyers what you're selling.</p>
+
+              <div class="field">
+                <label class="field-label" for="p-title">Product title <span class="req">*</span></label>
+                <input class="input" id="p-title" name="title" type="text" placeholder="e.g. Sony Wireless Headphones" maxlength="80" required>
+                <p class="field-error" id="p-title-error">Please enter a product title.</p>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label" for="p-category">Category <span class="req">*</span></label>
+                  <select class="select" id="p-category" name="category" required>
+                    <option value="" selected disabled>Select category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="vehicles">Vehicles</option>
+                    <option value="books">Books</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="p-location">Location <span class="req">*</span></label>
+                  <input class="input" id="p-location" name="location" type="text" placeholder="e.g. Brooklyn, NY" required>
+                  <p class="field-error" id="p-location-error">Please enter a location.</p>
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="field-label">Condition <span class="req">*</span></span>
+                <div class="segment" role="radiogroup" aria-label="Condition">
+                  <input type="radio" id="cond-new" name="condition" value="new">
+                  <label for="cond-new">New</label>
+                  <input type="radio" id="cond-used" name="condition" value="used">
+                  <label for="cond-used">Used</label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="p-price">Price <span class="req">*</span></label>
+                <div class="price-wrap">
+                  <span class="prefix" aria-hidden="true">$</span>
+                  <input class="input" id="p-price" name="price" type="number" placeholder="0.00" min="0" step="0.01" inputmode="decimal" required>
+                </div>
+                <p class="field-error" id="p-price-error">Please enter a price.</p>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="p-desc">Description <span class="req">*</span></label>
+                <textarea class="textarea" id="p-desc" name="description" placeholder="Condition, brand, what's included, why you're selling…" maxlength="1000" required></textarea>
+                <p class="field-hint">Add honest details to build buyer trust.</p>
+                <p class="field-error" id="p-desc-error">Please add a description.</p>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <a class="btn btn-plain btn-lg" href="my-products.html">Cancel</a>
+              <button class="btn btn-primary btn-lg" type="submit">
+                Publish listing
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="index.html">
+            <img src="images/logo.svg" alt="" width="36" height="36">
+            Vendio
+          </a>
+          <p class="footer-desc">Your local marketplace. Buy and sell electronics, fashion, furniture, vehicles and more — right in your neighborhood.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Marketplace</h4>
+          <a href="index.html">Browse listings</a>
+          <a href="index.html#categories">Categories</a>
+          <a href="add-product.html">Sell an item</a>
+          <a href="my-products.html">My products</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help center</a>
+          <a href="#">Safety tips</a>
+          <a href="#">Report an item</a>
+          <a href="#">Contact us</a>
+        </div>
+
+        <div class="footer-col footer-news">
+          <h4>Stay in the loop</h4>
+          <p>Get fresh local listings and seller tips straight to your inbox.</p>
+          <form class="news-form" action="#" method="post">
+            <label class="visually-hidden" for="news-email">Email address</label>
+            <input class="input" id="news-email" type="email" placeholder="you@example.com" autocomplete="email">
+            <button class="btn btn-primary btn-sm" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Vendio. All rights reserved.</span>
+        <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
