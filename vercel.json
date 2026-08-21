@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "backend/server.js": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "backend/server.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "backend/server.js"
+    }
+  ]
+}

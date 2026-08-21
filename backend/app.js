@@ -18,7 +18,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 
 // ─── Global middleware ────────────────────────────────────────────────
-app.use(cors()); // allow cross-origin requests from the frontend
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (origin.includes("localhost") || origin.includes("127.0.0.1")) {
+      return callback(null, true);
+    }
+    if (origin.includes("vercel.app")) {
+      return callback(null, true);
+    }
+    callback(null, true);
+  },
+  credentials: true,
+}));
 app.use(express.json({ limit: "10mb" })); // large enough for base64 product images
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "..", "frontend"))); // serve frontend
