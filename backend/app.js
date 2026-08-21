@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
 
 import User from "./models/User.js";
@@ -46,10 +47,11 @@ async function signup(req, res) {
     return res.json({ status: false, message: "An account with this email already exists" });
   }
 
+  const hashedPassword = await bcrypt.hash(password, 10);
   const user = await User.create({
     name: name.trim(),
     email: email.toLowerCase(),
-    password,
+    password: hashedPassword,
   });
 
   res.json({
@@ -69,7 +71,7 @@ async function login(req, res) {
   }
 
   const user = await User.findOne({ email: email.toLowerCase() }).select("+password");
-  if (!user || !(await user.matchPassword(password))) {
+  if (!user || !(await bcrypt.compare(password, user.password))) {
     return res.json({ status: false, message: "Invalid email or password" });
   }
 
@@ -159,7 +161,7 @@ async function resetPassword(req, res) {
     return res.json({ status: false, message: "OTP has expired. Please request a new one." });
   }
 
-  user.password = newPassword; // hashed by the User pre-save hook
+  user.password = await bcrypt.hash(newPassword, 10);
   user.passwordResetOtpHash = undefined;
   user.passwordResetOtpExpires = undefined;
   user.otpVerified = false;
