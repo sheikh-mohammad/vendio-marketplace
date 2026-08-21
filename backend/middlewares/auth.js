@@ -9,7 +9,7 @@ import { JWT_SECRET } from "../config/config.js";
 export async function protect(req, res, next) {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res.status(401).json({ message: "Not authorized — no token provided" });
+    return res.json({ status: false, message: "Not authorized — no token provided" });
   }
 
   const token = authHeader.split(" ")[1];
@@ -17,12 +17,12 @@ export async function protect(req, res, next) {
   try {
     decoded = jwt.verify(token, JWT_SECRET);
   } catch {
-    return res.status(401).json({ message: "Not authorized — token invalid or expired" });
+    return res.json({ status: false, message: "Not authorized — token invalid or expired" });
   }
 
   const user = await User.findById(decoded.id);
   if (!user) {
-    return res.status(401).json({ message: "Not authorized — account no longer exists" });
+    return res.json({ status: false, message: "Not authorized — account no longer exists" });
   }
 
   req.user = user;
