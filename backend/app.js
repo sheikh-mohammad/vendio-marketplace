@@ -23,7 +23,6 @@ app.use(express.urlencoded({ extended: true }));
 // ─── Shared helpers ───────────────────────────────────────────────────
 const OTP_EXPIRY_MS = 10 * 60 * 1000; // 10 minutes
 const signToken = (id) => jwt.sign({ id }, JWT_SECRET, { expiresIn: "7d" });
-const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const normalizeCase = (value) =>
   String(value).charAt(0).toUpperCase() + String(value).slice(1).toLowerCase();
 const isValidId = (id) => mongoose.isValidObjectId(id);
@@ -179,13 +178,13 @@ async function listProducts(req, res) {
 
   const filter = {};
   if (search) {
-    filter.title = { $regex: escapeRegex(search), $options: "i" }; // case-insensitive title search
+    filter.$text = { $search: search };
   }
   if (category) {
-    filter.category = { $regex: `^${escapeRegex(category)}$`, $options: "i" };
+    filter.category = normalizeCase(category);
   }
   if (condition) {
-    filter.condition = { $regex: `^${escapeRegex(condition)}$`, $options: "i" };
+    filter.condition = normalizeCase(condition);
   }
 
   let sortOption = { createdAt: -1 }; // newest first by default
