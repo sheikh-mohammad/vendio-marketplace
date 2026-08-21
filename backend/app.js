@@ -176,7 +176,7 @@ async function listProducts(req, res) {
 
   const filter = {};
   if (search) {
-    filter.$text = { $search: search };
+    filter.title = { $regex: search, $options: "i" };
   }
   if (category) {
     filter.category = normalizeCase(category);
