@@ -163,15 +163,52 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Fresh picks</span>
-            <h2>Featured listings</h2>
-            <p class="subtitle">Hand-picked deals from sellers near you.</p>
+            <span class="eyebrow">Marketplace</span>
+            <h2>Browse all listings</h2>
+            <p class="subtitle">Search, filter and sort everything your neighbours are selling.</p>
           </div>
           <a class="btn btn-primary btn-sm" href="add-product.html">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
             List your item
           </a>
         </div>
+
+        <!-- Search · Filter · Sort toolbar (maps to the API: ?search= &category= &condition= &sort=) -->
+        <form class="filter-bar" action="index.html" method="get" role="search">
+          <div class="filter-search">
+            <svg class="search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <label class="visually-hidden" for="mp-search">Search products by title</label>
+            <input class="input" id="mp-search" type="search" name="search" placeholder="Search by title… e.g. iPhone" autocomplete="off">
+          </div>
+
+          <label class="visually-hidden" for="mp-category">Category</label>
+          <select class="select filter-select" id="mp-category" name="category">
+            <option value="">All categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="furniture">Furniture</option>
+            <option value="vehicles">Vehicles</option>
+            <option value="books">Books</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label class="visually-hidden" for="mp-condition">Condition</label>
+          <select class="select filter-select" id="mp-condition" name="condition">
+            <option value="">Any condition</option>
+            <option value="new">New</option>
+            <option value="used">Used</option>
+          </select>
+
+          <label class="visually-hidden" for="mp-sort">Sort by price</label>
+          <select class="select filter-select" id="mp-sort" name="sort">
+            <option value="newest">Newest first</option>
+            <option value="price_asc">Price: Low → High</option>
+            <option value="price_desc">Price: High → Low</option>
+          </select>
+
+          <button class="btn btn-primary" type="submit">Apply filters</button>
+          <a class="btn btn-ghost" href="index.html">Reset</a>
+        </form>
 
         <div class="products-grid">
           <!-- 1 -->
@@ -349,6 +386,104 @@
               <div class="product-price">$160</div>
             </div>
           </article>
+
+          <!-- 9 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/fashion-jacket.svg" alt="Classic denim jacket" loading="lazy" width="640" height="480">
+              <span class="badge badge-new">New</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-fashion">Fashion</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Classic Denim Jacket</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Seattle, WA
+              </div>
+              <div class="product-price">$75</div>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/furniture-lamp.svg" alt="Designer table lamp" loading="lazy" width="640" height="480">
+              <span class="badge badge-new">New</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-furniture">Furniture</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Designer Table Lamp</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Boston, MA
+              </div>
+              <div class="product-price">$95</div>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/vehicles-bike.svg" alt="Mountain bike" loading="lazy" width="640" height="480">
+              <span class="badge badge-used">Used</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-vehicles">Vehicles</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Trek Mountain Bike</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Portland, OR
+              </div>
+              <div class="product-price">$380</div>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="product-card">
+            <a class="product-media" href="product.html">
+              <img src="images/products/books-cookbook.svg" alt="Family recipe cookbook" loading="lazy" width="640" height="480">
+              <span class="badge badge-new">New</span>
+              <button class="icon-btn fav" type="button" aria-label="Save to favourites">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </a>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="chip chip-books">Books</span>
+              </div>
+              <h3 class="product-title"><a href="product.html">Family Recipe Cookbook</a></h3>
+              <div class="product-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Columbus, OH
+              </div>
+              <div class="product-price">$24</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Empty data state — shown by JS when search/filter/sort finds no matches (§14) -->
+        <div class="empty-state" id="no-results" hidden>
+          <span class="empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <h2>No listings found</h2>
+          <p>We couldn't find anything matching your search. Try different keywords, or clear the filters to see everything.</p>
+          <a class="btn btn-primary" href="index.html">Clear all filters</a>
         </div>
       </div>
     </section>

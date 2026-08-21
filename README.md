@@ -32,6 +32,7 @@ community is selling. This is the frontend — built with **pure HTML + CSS**
 | Edit Product | [`frontend/edit-product.html`](frontend/edit-product.html) |
 
 ### UI highlights
+- **Marketplace search · filter · sort** — a toolbar on the home page for search by title, category filter (Electronics, Fashion, Furniture, Vehicles, Books, Other), condition filter (New/Used) and price sorting (Low→High / High→Low), mapped to the API params `search`, `category`, `condition`, `sort=price_asc|price_desc`. Includes an empty-data state for when no results match.
 - **Light, professional & exciting** — vibrant blue brand, emerald price accents, soft gradients & shadows.
 - **Fully local assets** — self-hosted Rubik + Nunito Sans (woff2), inline SVG icons, local product imagery. **No CDNs.**
 - **Responsive** — mobile-first at 375 / 768 / 1024 / 1440px, with a CSS-only mobile menu.

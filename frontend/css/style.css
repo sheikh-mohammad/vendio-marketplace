@@ -963,8 +963,40 @@ p { margin: 0 0 1rem; }
 .empty-state p { color: var(--slate-500); max-width: 400px; margin: 0 auto 22px; }
 
 /* ------------------------------------------------------------
+   17b. Marketplace search / filter / sort toolbar
+   Maps directly to the API query params: ?search= &category= &condition= &sort=
+   ------------------------------------------------------------ */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 12px;
+  box-shadow: var(--sh-sm);
+  margin-bottom: 26px;
+}
+.filter-search { position: relative; flex: 1 1 200px; min-width: 180px; }
+.filter-search .input { width: 100%; padding-left: 40px; }
+.search-ico {
+  position: absolute; left: 13px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--slate-400); pointer-events: none;
+}
+.filter-select { flex: 0 1 180px; }
+.filter-bar .btn { white-space: nowrap; }
+
+@media (max-width: 700px) {
+  .filter-search { flex: 1 1 100%; }
+  .filter-select { flex: 1 1 calc(50% - 10px); }
+  .filter-bar .btn { flex: 1 1 auto; }
+}
+
+/* ------------------------------------------------------------
    18. Utilities
    ------------------------------------------------------------ */
+[hidden] { display: none !important; }
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
