@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
 
 import User from "./models/User.js";
@@ -101,7 +100,7 @@ async function forgotPassword(req, res) {
   // Respond identically whether or not the email exists (no account leaking).
   if (user) {
     const otp = generateOtp();
-    user.passwordResetOtpHash = await bcrypt.hash(otp, 10);
+    user.passwordResetOtpHash = otp;
     user.passwordResetOtpExpires = new Date(Date.now() + OTP_EXPIRY_MS);
     user.otpVerified = false;
     await user.save();
@@ -127,7 +126,7 @@ async function verifyOtp(req, res) {
     user &&
     user.passwordResetOtpHash &&
     (!user.passwordResetOtpExpires || new Date(user.passwordResetOtpExpires) > new Date()) &&
-    (await bcrypt.compare(String(otp), user.passwordResetOtpHash));
+    String(otp) === user.passwordResetOtpHash;
 
   if (!valid) {
     return res.json({ status: false, message: "Invalid or expired OTP" });

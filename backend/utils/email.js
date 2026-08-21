@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-import { randomInt } from "node:crypto";
 import { SMTP_SERVICE, SMTP_EMAIL, SMTP_APP_PASS } from "../config/config.js";
 
 const smtpConfigured = Boolean(SMTP_EMAIL && SMTP_APP_PASS);
@@ -15,11 +14,8 @@ function getTransporter() {
   return transporter;
 }
 
-/**
- * Generate a cryptographically-random 6-digit OTP.
- */
 export function generateOtp() {
-  return String(randomInt(100000, 1000000));
+  return String(Math.floor(Math.random() * 900000) + 100000);
 }
 
 /**
