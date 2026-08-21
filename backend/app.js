@@ -6,7 +6,6 @@ import mongoose from "mongoose";
 import User from "./models/User.js";
 import Product, { CATEGORIES, CONDITIONS } from "./models/Product.js";
 import { protect } from "./middlewares/auth.js";
-import { notFound, errorHandler } from "./middlewares/error.js";
 import { uploadImage, deleteImage, publicIdFromUrl } from "./utils/cloudinary.js";
 import { generateOtp, sendOtpEmail } from "./utils/email.js";
 import { JWT_SECRET } from "./config/config.js";
@@ -374,9 +373,5 @@ app.get("/api/products/:id", getProductById); // public single
 app.put("/api/products/:id", protect, updateProduct); // owner only
 app.patch("/api/products/:id", protect, updateProduct); // owner only
 app.delete("/api/products/:id", protect, deleteProduct); // owner only
-
-// ─── Error handling ───────────────────────────────────────────────────
-app.use(notFound);
-app.use(errorHandler);
 
 export default app;
