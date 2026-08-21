@@ -3,6 +3,8 @@ import cors from "cors";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
+import path from "path";
+import { fileURLToPath } from "url";
 
 import User from "./models/User.js";
 import Product, { CATEGORIES, CONDITIONS } from "./models/Product.js";
@@ -11,12 +13,15 @@ import { uploadImage, deleteImage, publicIdFromUrl } from "./utils/cloudinary.js
 import { generateOtp, sendOtpEmail } from "./utils/email.js";
 import { JWT_SECRET } from "./config/config.js";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const app = express();
 
 // ─── Global middleware ────────────────────────────────────────────────
 app.use(cors()); // allow cross-origin requests from the frontend
 app.use(express.json({ limit: "10mb" })); // large enough for base64 product images
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "..", "frontend"))); // serve frontend
 
 
 // ─── Shared helpers ───────────────────────────────────────────────────
