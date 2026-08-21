@@ -1,4 +1,7 @@
-const API_BASE = "http://localhost:5000/api";
+const isProd = window.location.hostname === "vendio-marketplace.vercel.app";
+const API_BASE = isProd
+  ? "https://api-vendio-marketplace.vercel.app/api"
+  : "http://localhost:5000/api";
 
 export function getToken() {
   return localStorage.getItem("vendio_token");
