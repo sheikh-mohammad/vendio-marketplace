@@ -69,27 +69,26 @@ backend/
 │
 ├── config/
 │   └── config.js            # Loads .env, exports all environment config
-├── controllers/             # Route handlers
-│   ├── authController.js    #   signup, login, logout, forgot/verify/reset-password
-│   └── productController.js #   CRUD + search / filter / sort + ownership checks
 ├── middlewares/
 │   ├── auth.js              # JWT `protect` middleware (attaches req.userId)
 │   └── error.js             # notFound 404 + central error handler
 ├── models/
 │   ├── User.js              # bcrypt pre-save hashing, matchPassword, OTP fields
 │   └── Product.js           # seller ref, category/condition enums, timestamps
-├── routes/
-│   ├── authRoutes.js        # /api/auth/* — mounted in app.js
-│   └── productRoutes.js     # /api/products/* — mounted in app.js
 ├── utils/
 │   ├── cloudinary.js        # Cloudinary config + uploadImage / deleteImage
 │   └── email.js             # Nodemailer transporter + generateOtp / sendOtpEmail
-├── app.js                   # App builder: cors, json (10mb), routes, 404, errors
+├── app.js                   # App builder + all route definitions/handlers
+│                            #   (cors, json 10mb, auth + product endpoints, 404, errors)
 ├── server.js                # Express bootstrap + Mongo connect + listen
 ├── .env                     # Secrets (git-ignored — never commit)
 ├── .env.example             # Template keys with placeholder values
 └── package.json
 ```
+
+> **Note:** The structure matches `docs/requirements.md` (models / middleware /
+> config / utils / app.js / server.js). There are **no separate `controllers/` or
+> `routes/` folders** — all route handlers live directly in `app.js`.
 
 ---
 
@@ -317,6 +316,10 @@ A complete list of the endpoints to build, mapped to the requirements:
 | DELETE | `/api/products/:id` | owner | Delete own product |
 
 > Route paths are a recommendation; keep them RESTful and consistent.
+
+> **Response format:** every response carries a `status` boolean alongside the HTTP
+> status code — `status: true` for 2xx/3xx success, `status: false` for 4xx/5xx
+> errors (e.g. `{ "status": true, ... }` and `{ "status": false, "message": "..." }`).
 
 ---
 
