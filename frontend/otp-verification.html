@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify code — Vendio</title>
+  <meta name="description" content="Enter the one-time code we emailed you to verify it's really you and reset your Vendio password.">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Vendio home">
+        <img src="images/logo.svg" alt="" width="38" height="38">
+        <span class="brand-mark">Vendio<span class="tag">Marketplace</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" tabindex="-1">
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Primary">
+        <a class="nav-link" href="index.html">Browse</a>
+        <a class="nav-link" href="index.html#categories">Categories</a>
+        <a class="nav-link" href="add-product.html">Sell</a>
+        <div class="nav-cta">
+          <a class="btn btn-ghost btn-sm" href="login.html">Log in</a>
+          <a class="btn btn-primary btn-sm" href="signup.html">Get started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth-page">
+      <div class="auth-card-center">
+
+        <span class="auth-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h4.2"/><rect width="10" height="12" x="9" y="2" rx="2"/><circle cx="14" cy="10" r="1.5"/><path d="M14 11.5V17"/></svg>
+        </span>
+
+        <div class="auth-head">
+          <h1>Check your email</h1>
+          <p>We sent a 6-digit code to <strong>a***@gmail.com</strong>. Enter it below to verify it's really you.</p>
+        </div>
+
+        <form action="reset-password.html" method="get" novalidate>
+          <div class="otp-row" role="group" aria-label="6-digit verification code">
+            <label class="visually-hidden" for="otp-1">Digit 1</label>
+            <input class="otp" id="otp-1" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 1">
+            <label class="visually-hidden" for="otp-2">Digit 2</label>
+            <input class="otp" id="otp-2" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+            <label class="visually-hidden" for="otp-3">Digit 3</label>
+            <input class="otp" id="otp-3" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+            <label class="visually-hidden" for="otp-4">Digit 4</label>
+            <input class="otp" id="otp-4" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+            <label class="visually-hidden" for="otp-5">Digit 5</label>
+            <input class="otp" id="otp-5" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+            <label class="visually-hidden" for="otp-6">Digit 6</label>
+            <input class="otp" id="otp-6" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6">
+          </div>
+
+          <button class="btn btn-primary btn-block btn-lg mt-2" type="submit">Verify code</button>
+        </form>
+
+        <p class="muted" style="font-size:.9rem; margin-top:18px;">
+          Didn't get the code?
+          <a href="forgot-password.html">Resend code</a>
+        </p>
+
+        <a class="auth-back" href="forgot-password.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Use a different email
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="index.html">
+            <img src="images/logo.svg" alt="" width="36" height="36">
+            Vendio
+          </a>
+          <p class="footer-desc">Your local marketplace. Buy and sell electronics, fashion, furniture, vehicles and more — right in your neighborhood.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Marketplace</h4>
+          <a href="index.html">Browse listings</a>
+          <a href="index.html#categories">Categories</a>
+          <a href="add-product.html">Sell an item</a>
+          <a href="my-products.html">My products</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help center</a>
+          <a href="#">Safety tips</a>
+          <a href="#">Report an item</a>
+          <a href="#">Contact us</a>
+        </div>
+
+        <div class="footer-col footer-news">
+          <h4>Stay in the loop</h4>
+          <p>Get fresh local listings and seller tips straight to your inbox.</p>
+          <form class="news-form" action="#" method="post">
+            <label class="visually-hidden" for="news-email">Email address</label>
+            <input class="input" id="news-email" type="email" placeholder="you@example.com" autocomplete="email">
+            <button class="btn btn-primary btn-sm" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Vendio. All rights reserved.</span>
+        <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
