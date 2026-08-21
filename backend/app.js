@@ -354,6 +354,34 @@ async function deleteProduct(req, res) {
 
 // ─── Routes ───────────────────────────────────────────────────────────
 
+// Root
+app.get("/", (req, res) => {
+  res.json({
+    status: true,
+    message: "Welcome to Vendio API",
+    version: "1.0.0",
+    endpoints: {
+      health: "GET /api/health",
+      auth: {
+        signup: "POST /api/auth/signup",
+        login: "POST /api/auth/login",
+        logout: "POST /api/auth/logout",
+        forgotPassword: "POST /api/auth/forgot-password",
+        verifyOtp: "POST /api/auth/verify-otp",
+        resetPassword: "POST /api/auth/reset-password",
+      },
+      products: {
+        list: "GET /api/products",
+        create: "POST /api/products",
+        myProducts: "GET /api/products/my",
+        getById: "GET /api/products/:id",
+        update: "PUT /api/products/:id",
+        delete: "DELETE /api/products/:id",
+      },
+    },
+  });
+});
+
 // Health check
 app.get("/api/health", (req, res) => {
   res.json({ status: true, message: "Vendio API is running" });
