@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My products — Vendio</title>
+  <meta name="description" content="Manage your Vendio listings — view, edit or delete your products in one place.">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= Header (logged in) ================= -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Vendio home">
+        <img src="images/logo.svg" alt="" width="38" height="38">
+        <span class="brand-mark">Vendio<span class="tag">Marketplace</span></span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" tabindex="-1">
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav-menu" aria-label="Primary">
+        <a class="nav-link" href="index.html">Browse</a>
+        <a class="nav-link is-active" href="my-products.html">My products</a>
+        <a class="nav-link" href="add-product.html">Sell</a>
+        <div class="nav-cta">
+          <a class="user-chip" href="my-products.html">
+            <span class="user-avatar" aria-hidden="true">AK</span>
+            Aisha
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Page head -->
+      <div class="page-head">
+        <div>
+          <span class="eyebrow">Your dashboard</span>
+          <h1>My products</h1>
+          <p>View, edit and manage everything you've listed on Vendio.</p>
+        </div>
+        <a class="btn btn-primary" href="add-product.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          Post new listing
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-grid mt-3">
+        <div class="stat-card">
+          <span class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </span>
+          <div><div class="stat-num">4</div><div class="stat-label">Active listings</div></div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon" style="background:var(--accent-50); color:var(--accent-600);" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+          <div><div class="stat-num">1.4k</div><div class="stat-label">Total views</div></div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon" style="background:var(--warning-100); color:var(--warning-600);" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <div><div class="stat-num">12</div><div class="stat-label">Messages</div></div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon" style="background:#FDF2F8; color:#DB2777;" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </span>
+          <div><div class="stat-num">8</div><div class="stat-label">Saved</div></div>
+        </div>
+      </div>
+
+      <!-- List -->
+      <div class="list-card mt-3">
+
+        <div class="list-row">
+          <a class="list-thumb" href="product.html">
+            <img src="images/products/electronics-headphones.svg" alt="Sony Wireless Headphones" width="92" height="72">
+          </a>
+          <div class="list-info">
+            <h3 class="list-title"><a href="product.html">Sony Wireless Headphones</a></h3>
+            <div class="list-meta">
+              <span class="chip chip-electronics">Electronics</span>
+              <span class="badge badge-used">Used</span>
+              <span>Brooklyn, NY</span>
+              <span>· Posted Aug 18</span>
+            </div>
+          </div>
+          <div class="list-price">$249</div>
+          <div class="list-actions">
+            <a class="icon-btn icon-btn-sm icon-btn-edit" href="edit-product.html" aria-label="Edit Sony Wireless Headphones">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+            </a>
+            <a class="icon-btn icon-btn-sm" href="product.html" aria-label="View Sony Wireless Headphones">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg>
+            </a>
+            <button class="icon-btn icon-btn-sm icon-btn-del" type="button" aria-label="Delete Sony Wireless Headphones">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="list-row">
+          <a class="list-thumb" href="product.html">
+            <img src="images/products/fashion-jacket.svg" alt="Classic Denim Jacket" width="92" height="72">
+          </a>
+          <div class="list-info">
+            <h3 class="list-title"><a href="product.html">Classic Denim Jacket</a></h3>
+            <div class="list-meta">
+              <span class="chip chip-fashion">Fashion</span>
+              <span class="badge badge-new">New</span>
+              <span>Seattle, WA</span>
+              <span>· Posted Aug 15</span>
+            </div>
+          </div>
+          <div class="list-price">$75</div>
+          <div class="list-actions">
+            <a class="icon-btn icon-btn-sm icon-btn-edit" href="edit-product.html" aria-label="Edit Classic Denim Jacket">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+            </a>
+            <a class="icon-btn icon-btn-sm" href="product.html" aria-label="View Classic Denim Jacket">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg>
+            </a>
+            <button class="icon-btn icon-btn-sm icon-btn-del" type="button" aria-label="Delete Classic Denim Jacket">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="list-row">
+          <a class="list-thumb" href="product.html">
+            <img src="images/products/furniture-lamp.svg" alt="Designer Table Lamp" width="92" height="72">
+          </a>
+          <div class="list-info">
+            <h3 class="list-title"><a href="product.html">Designer Table Lamp</a></h3>
+            <div class="list-meta">
+              <span class="chip chip-furniture">Furniture</span>
+              <span class="badge badge-new">New</span>
+              <span>Boston, MA</span>
+              <span>· Posted Aug 10</span>
+            </div>
+          </div>
+          <div class="list-price">$95</div>
+          <div class="list-actions">
+            <a class="icon-btn icon-btn-sm icon-btn-edit" href="edit-product.html" aria-label="Edit Designer Table Lamp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+            </a>
+            <a class="icon-btn icon-btn-sm" href="product.html" aria-label="View Designer Table Lamp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg>
+            </a>
+            <button class="icon-btn icon-btn-sm icon-btn-del" type="button" aria-label="Delete Designer Table Lamp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="list-row">
+          <a class="list-thumb" href="product.html">
+            <img src="images/products/books-cookbook.svg" alt="Family Recipe Cookbook" width="92" height="72">
+          </a>
+          <div class="list-info">
+            <h3 class="list-title"><a href="product.html">Family Recipe Cookbook</a></h3>
+            <div class="list-meta">
+              <span class="chip chip-books">Books</span>
+              <span class="badge badge-new">New</span>
+              <span>Columbus, OH</span>
+              <span>· Posted Aug 05</span>
+            </div>
+          </div>
+          <div class="list-price">$24</div>
+          <div class="list-actions">
+            <a class="icon-btn icon-btn-sm icon-btn-edit" href="edit-product.html" aria-label="Edit Family Recipe Cookbook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+            </a>
+            <a class="icon-btn icon-btn-sm" href="product.html" aria-label="View Family Recipe Cookbook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg>
+            </a>
+            <button class="icon-btn icon-btn-sm icon-btn-del" type="button" aria-label="Delete Family Recipe Cookbook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- note about empty state (hidden until data is empty via JS) -->
+      <!--
+      <div class="empty-state mt-3">
+        <span class="empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+        </span>
+        <h2>No listings yet</h2>
+        <p>You haven't posted anything yet. List your first item and start selling today.</p>
+        <a class="btn btn-primary" href="add-product.html">Post your first listing</a>
+      </div>
+      -->
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="index.html">
+            <img src="images/logo.svg" alt="" width="36" height="36">
+            Vendio
+          </a>
+          <p class="footer-desc">Your local marketplace. Buy and sell electronics, fashion, furniture, vehicles and more — right in your neighborhood.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Marketplace</h4>
+          <a href="index.html">Browse listings</a>
+          <a href="index.html#categories">Categories</a>
+          <a href="add-product.html">Sell an item</a>
+          <a href="my-products.html">My products</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help center</a>
+          <a href="#">Safety tips</a>
+          <a href="#">Report an item</a>
+          <a href="#">Contact us</a>
+        </div>
+
+        <div class="footer-col footer-news">
+          <h4>Stay in the loop</h4>
+          <p>Get fresh local listings and seller tips straight to your inbox.</p>
+          <form class="news-form" action="#" method="post">
+            <label class="visually-hidden" for="news-email">Email address</label>
+            <input class="input" id="news-email" type="email" placeholder="you@example.com" autocomplete="email">
+            <button class="btn btn-primary btn-sm" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Vendio. All rights reserved.</span>
+        <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
