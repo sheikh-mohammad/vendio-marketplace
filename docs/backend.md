@@ -17,9 +17,9 @@ marketplace. It is responsible for:
 - **Cloudinary** image hosting for product images.
 - **Search / filter / sort** on the marketplace listing.
 
-> ⚠️ **Current status: scaffold only.** The backend is set up and boots, but the
-> routes, models, middlewares and controllers are **not implemented yet**. Sections
-> marked **Target** below describe what must be built to satisfy the requirements.
+> ✅ **Current status: implemented.** All routes, models, middlewares, controllers
+> and helpers described below are built and verified against the requirements in
+> `docs/requirements.md`. Sections previously marked **Target** are now live.
 
 ---
 
@@ -68,28 +68,27 @@ Installed in `backend/package.json` (`"type": "module"` — ESM):
 backend/
 │
 ├── config/
-│   └── config.js          # Loads .env, exports all environment config
-├── middlewares/           # (empty — auth, error handling go here)
-├── models/                # (empty — User, Product schemas go here)
-├── utils/                 # (empty — helpers e.g. Cloudinary, email, JWT)
-├── app.js                 # (empty placeholder)
-├── server.js              # Express bootstrap + Mongo connect + listen
-├── .env                   # Secrets (git-ignored — never commit)
-├── .env.example           # Empty; copy template keys here for submission
-└── package.json
-```
-
-Recommended layout per `requirements.md` is:
-
-```text
-backend/
-│
+│   └── config.js            # Loads .env, exports all environment config
+├── controllers/             # Route handlers
+│   ├── authController.js    #   signup, login, logout, forgot/verify/reset-password
+│   └── productController.js #   CRUD + search / filter / sort + ownership checks
+├── middlewares/
+│   ├── auth.js              # JWT `protect` middleware (attaches req.userId)
+│   └── error.js             # notFound 404 + central error handler
 ├── models/
-├── middleware/
-├── config/
+│   ├── User.js              # bcrypt pre-save hashing, matchPassword, OTP fields
+│   └── Product.js           # seller ref, category/condition enums, timestamps
+├── routes/
+│   ├── authRoutes.js        # /api/auth/* — mounted in app.js
+│   └── productRoutes.js     # /api/products/* — mounted in app.js
 ├── utils/
-├── app.js
-└── server.js
+│   ├── cloudinary.js        # Cloudinary config + uploadImage / deleteImage
+│   └── email.js             # Nodemailer transporter + generateOtp / sendOtpEmail
+├── app.js                   # App builder: cors, json (10mb), routes, 404, errors
+├── server.js                # Express bootstrap + Mongo connect + listen
+├── .env                     # Secrets (git-ignored — never commit)
+├── .env.example             # Template keys with placeholder values
+└── package.json
 ```
 
 ---
@@ -370,16 +369,20 @@ evaluation points after core auth — plan the backend around them.
 
 ---
 
-## 🚧 16. Remaining Work (TODO)
+## ✅ 16. Remaining Work (TODO)
 
-Current scaffold gaps to close:
+All scaffold gaps are closed and verified:
 
-- [ ] Create `models/User.js` and `models/Product.js` (per section 11).
-- [ ] Create auth middleware (`middlewares/`) for JWT verification.
-- [ ] Create Cloudinary upload helper (`utils/`).
-- [ ] Create email / OTP helper using Nodemailer (`utils/`).
-- [ ] Implement auth routes (signup, login, logout, forgot/verify/reset).
-- [ ] Implement product CRUD + ownership checks.
-- [ ] Implement search / filter / sort on the listing query.
-- [ ] Populate `.env.example` with placeholder values.
-- [ ] Remove/replace the empty `app.js` placeholder (or wire it as the app builder).
+- [x] Create `models/User.js` and `models/Product.js` (per section 11).
+- [x] Create auth middleware (`middlewares/`) for JWT verification.
+- [x] Create Cloudinary upload helper (`utils/`).
+- [x] Create email / OTP helper using Nodemailer (`utils/`).
+- [x] Implement auth routes (signup, login, logout, forgot/verify/reset).
+- [x] Implement product CRUD + ownership checks.
+- [x] Implement search / filter / sort on the listing query.
+- [x] Populate `.env.example` with placeholder values.
+- [x] Wire `app.js` as the app builder (routes, 404, error handling).
+
+> ⚠️ **Note on ports:** `config/config.js` defaults to `PORT=50001`, but the local
+> `.env` currently sets `PORT=5000` — the frontend should point at whatever the
+> running server logs on boot (`http://localhost:5000`).
