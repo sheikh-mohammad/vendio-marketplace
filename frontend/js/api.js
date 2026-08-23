@@ -1,11 +1,8 @@
 const hostname = window.location.hostname;
 const isProd = hostname === "vendio-marketplace.vercel.app";
-const isApiSubdomain = hostname === "api-vendio-marketplace.vercel.app";
 
 let API_BASE;
 if (isProd) {
-  API_BASE = "https://api-vendio-marketplace.vercel.app/api";
-} else if (isApiSubdomain) {
   API_BASE = "/api";
 } else if (hostname === "localhost" || hostname === "127.0.0.1") {
   API_BASE = "http://localhost:5000/api";

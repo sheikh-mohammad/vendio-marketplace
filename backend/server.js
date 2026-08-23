@@ -16,7 +16,11 @@ async function connectDB() {
 }
 
 if (process.env.VERCEL) {
-  await connectDB();
+  try {
+    await connectDB();
+  } catch (error) {
+    console.error("Error in MongoDB Connection", error);
+  }
 } else {
   connectDB()
     .then(() => {

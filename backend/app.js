@@ -35,6 +35,11 @@ app.use(express.json({ limit: "10mb" })); // large enough for base64 product ima
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "..", "frontend"))); // serve frontend
 
+app.use((err, req, res, next) => {
+  console.error("Server error:", err);
+  res.json({ status: false, message: "Internal server error" });
+});
+
 
 // ─── Shared helpers ───────────────────────────────────────────────────
 const OTP_EXPIRY_MS = 10 * 60 * 1000; // 10 minutes
