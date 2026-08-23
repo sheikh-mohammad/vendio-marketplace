@@ -24,7 +24,7 @@ app.use(cors({
     if (origin.includes("localhost") || origin.includes("127.0.0.1")) {
       return callback(null, true);
     }
-    if (origin.includes("vercel.app")) {
+    if (origin.includes("vercel.app") || origin.includes("netlify.app")) {
       return callback(null, true);
     }
     callback(null, true);
