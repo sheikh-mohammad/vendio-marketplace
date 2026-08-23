@@ -31,9 +31,8 @@ app.use(cors({
   },
   credentials: true,
 }));
-app.use(express.json({ limit: "10mb" })); // large enough for base64 product images
+app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "..", "frontend"))); // serve frontend
 
 app.use((err, req, res, next) => {
   console.error("Server error:", err);
