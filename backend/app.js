@@ -7,6 +7,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import User from "./models/User.js";
+import Otp from "./models/Otp.js";
 import Product, { CATEGORIES, CONDITIONS } from "./models/Product.js";
 import { protect } from "./middlewares/auth.js";
 import { uploadImage, deleteImage, publicIdFromUrl } from "./utils/cloudinary.js";
@@ -122,10 +123,11 @@ async function forgotPassword(req, res) {
   // Respond identically whether or not the email exists (no account leaking).
   if (user) {
     const otp = generateOtp();
-    user.passwordResetOtpHash = otp;
-    user.passwordResetOtpExpires = new Date(Date.now() + OTP_EXPIRY_MS);
-    user.otpVerified = false;
-    await user.save();
+    await Otp.findOneAndUpdate(
+      { email: user.email, purpose: "password_reset" },
+      { code: otp, expiresAt: new Date(Date.now() + OTP_EXPIRY_MS), verified: false },
+      { upsert: true, new: true, setDefaultsOnInsert: true }
+    );
     await sendOtpEmail(user.email, otp);
   }
 
@@ -143,19 +145,19 @@ async function verifyOtp(req, res) {
     return res.json({ status: false, message: "Email and OTP are required" });
   }
 
-  const user = await User.findOne({ email: email.toLowerCase() });
+  const record = await Otp.findOne({ email: email.toLowerCase(), purpose: "password_reset" });
   const valid =
-    user &&
-    user.passwordResetOtpHash &&
-    (!user.passwordResetOtpExpires || new Date(user.passwordResetOtpExpires) > new Date()) &&
-    String(otp) === user.passwordResetOtpHash;
+    record &&
+    record.code &&
+    record.expiresAt > new Date() &&
+    String(otp) === record.code;
 
   if (!valid) {
     return res.json({ status: false, message: "Invalid or expired OTP" });
   }
 
-  user.otpVerified = true;
-  await user.save();
+  record.verified = true;
+  await record.save();
 
   res.json({ status: true, message: "OTP verified successfully" });
 }
@@ -175,18 +177,18 @@ async function resetPassword(req, res) {
   }
 
   const user = await User.findOne({ email: email.toLowerCase() });
-  if (!user || !user.otpVerified) {
+  const record = await Otp.findOne({ email: email.toLowerCase(), purpose: "password_reset" });
+  if (!user || !record || !record.verified) {
     return res.json({ status: false, message: "Please verify your OTP first" });
   }
-  if (!user.passwordResetOtpExpires || new Date(user.passwordResetOtpExpires) < new Date()) {
+  if (record.expiresAt < new Date()) {
+    await record.deleteOne();
     return res.json({ status: false, message: "OTP has expired. Please request a new one." });
   }
 
   user.password = await bcrypt.hash(newPassword, 10);
-  user.passwordResetOtpHash = undefined;
-  user.passwordResetOtpExpires = undefined;
-  user.otpVerified = false;
   await user.save();
+  await record.deleteOne();
 
   res.json({ status: true, message: "Password reset successful. You can log in now." });
 }
