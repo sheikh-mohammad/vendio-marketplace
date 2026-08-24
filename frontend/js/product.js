@@ -152,6 +152,18 @@ async function loadProduct() {
 
     const sellerH3 = document.querySelector(".seller-info h3");
     if (sellerH3) sellerH3.textContent = sellerName;
+
+    const contactBtn = document.getElementById("contact-seller-btn");
+    if (contactBtn && p.seller.email) {
+      const subject = encodeURIComponent("Vendio inquiry: " + p.title);
+      const body = encodeURIComponent(
+        "Hi " + sellerName + ",\n\nI'm interested in your listing \"" + p.title +
+        "\" (" + formatPrice(p.price) + ") on Vendio.\n\nIs it still available?\n\nThanks!"
+      );
+      contactBtn.href = "mailto:" + p.seller.email + "?subject=" + subject + "&body=" + body;
+    } else if (contactBtn) {
+      contactBtn.setAttribute("aria-disabled", "true");
+    }
   }
 
   loadSimilar(p.category, p._id);
