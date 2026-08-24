@@ -13,11 +13,7 @@ cloudinary.config({
 
 const FOLDER = "vendio/products";
 
-/**
- * Upload a product image to Cloudinary.
- * @param {string} source - A data URI ("data:image/...;base64,...") or raw base64.
- * @returns {Promise<{ publicId: string, url: string }>}
- */
+// Upload a product image (data URI or raw base64) — resolves { publicId, url }
 export async function uploadImage(source) {
   if (!source) throw new Error("No image provided");
   const result = await cloudinary.uploader.upload(source, {
@@ -27,10 +23,7 @@ export async function uploadImage(source) {
   return { publicId: result.public_id, url: result.secure_url };
 }
 
-/**
- * Best-effort delete of a Cloudinary image (does not throw on failure).
- * @param {string} publicId - e.g. "vendio/products/abc123"
- */
+// Best-effort delete of a Cloudinary image (does not throw on failure)
 export async function deleteImage(publicId) {
   if (!publicId) return;
   try {
@@ -40,10 +33,7 @@ export async function deleteImage(publicId) {
   }
 }
 
-/**
- * Extract the public_id from a Cloudinary URL, or null if it is not one.
- * @param {string} url - e.g. https://res.cloudinary.com/<name>/image/upload/v1/vendio/products/abc.jpg
- */
+// Extract the public_id from a Cloudinary URL, or null if it is not one
 export function publicIdFromUrl(url) {
   if (!url) return null;
   const match = url.match(/\/upload\/v\d+\/(.+)$/);
