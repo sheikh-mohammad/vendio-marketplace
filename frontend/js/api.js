@@ -3,7 +3,7 @@ const isProd = hostname === "vendio-marketplace-frontend.vercel.app";
 
 let API_BASE;
 if (isProd) {
-  API_BASE = "/api";
+  API_BASE = "https://api-vendio-marketplace.vercel.app/api";
 } else if (hostname === "localhost" || hostname === "127.0.0.1") {
   API_BASE = "http://localhost:5000/api";
 } else {

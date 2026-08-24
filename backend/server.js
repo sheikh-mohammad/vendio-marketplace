@@ -1,3 +1,4 @@
+import dns from "dns";
 import mongoose from "mongoose";
 import app from "./app.js";
 import { MONGODB_URI, PORT } from "./config/config.js";
@@ -9,6 +10,9 @@ async function connectDB() {
   if (mongoose.connection.readyState === 1) {
     isConnected = true;
     return;
+  }
+  if (process.env.VERCEL) {
+    dns.setServers(["8.8.8.8", "1.1.1.1"]);
   }
   await mongoose.connect(MONGODB_URI);
   isConnected = true;
