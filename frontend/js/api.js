@@ -1,5 +1,5 @@
 const hostname = window.location.hostname;
-const isProd = hostname === "vendio-marketplace.vercel.app";
+const isProd = hostname === "vendio-marketplace-frontend.vercel.app";
 
 let API_BASE;
 if (isProd) {
