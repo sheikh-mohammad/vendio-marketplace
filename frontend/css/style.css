@@ -374,7 +374,7 @@ p { margin: 0 0 1rem; }
   position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
   color: var(--slate-500); font-family: var(--font-display); font-weight: 600;
 }
-.price-wrap .input { padding-left: 42px; }
+.price-wrap .input { padding-left: 56px; }
 
 /* form footer */
 .form-foot { display: flex; gap: 14px; margin-top: 26px; }

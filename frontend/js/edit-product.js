@@ -4,8 +4,7 @@ import { requireAuth, updateHeader, setButtonLoading, showFormMessage } from "./
 requireAuth();
 updateHeader();
 
-const params = new URLSearchParams(window.location.search);
-const productId = params.get("id");
+const productId = decodeURIComponent(window.location.hash.slice(1));
 
 if (!productId) {
   window.location.href = "my-products.html";

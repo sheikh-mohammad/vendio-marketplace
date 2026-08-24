@@ -3,11 +3,10 @@ import { updateHeader } from "./auth.js";
 
 updateHeader();
 
-const params = new URLSearchParams(window.location.search);
-const productId = params.get("id");
+const productId = decodeURIComponent(window.location.hash.slice(1));
 
 function formatPrice(price) {
-  return "$" + Number(price).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  return "Rs " + Number(price).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
 
 function timeAgo(dateStr) {
@@ -186,7 +185,7 @@ async function loadSimilar(category, currentId) {
 
     const link = document.createElement("a");
     link.className = "product-media";
-    link.href = "product.html?id=" + item._id;
+    link.href = "product.html#" + item._id;
 
     const img = document.createElement("img");
     img.src = item.image;
@@ -214,7 +213,7 @@ async function loadSimilar(category, currentId) {
     const title = document.createElement("h3");
     title.className = "product-title";
     const titleLink = document.createElement("a");
-    titleLink.href = "product.html?id=" + item._id;
+    titleLink.href = "product.html#" + item._id;
     titleLink.textContent = item.title;
     title.appendChild(titleLink);
 

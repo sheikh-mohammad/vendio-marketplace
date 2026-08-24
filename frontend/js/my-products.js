@@ -8,7 +8,7 @@ const listCard = document.querySelector(".list-card");
 const statNum = document.querySelector(".stat-num");
 
 function formatPrice(price) {
-  return "$" + Number(price).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  return "Rs " + Number(price).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
 
 function formatDate(dateStr) {
@@ -40,7 +40,7 @@ function createListRow(product) {
 
   const thumb = document.createElement("a");
   thumb.className = "list-thumb";
-  thumb.href = "product.html?id=" + product._id;
+  thumb.href = "product.html#" + product._id;
   const img = document.createElement("img");
   img.src = product.image;
   img.alt = product.title;
@@ -53,7 +53,7 @@ function createListRow(product) {
   const title = document.createElement("h3");
   title.className = "list-title";
   const titleLink = document.createElement("a");
-  titleLink.href = "product.html?id=" + product._id;
+  titleLink.href = "product.html#" + product._id;
   titleLink.textContent = product.title;
   title.appendChild(titleLink);
 
@@ -86,13 +86,13 @@ function createListRow(product) {
 
   const editBtn = document.createElement("a");
   editBtn.className = "icon-btn icon-btn-sm icon-btn-edit";
-  editBtn.href = "edit-product.html?id=" + product._id;
+  editBtn.href = "edit-product.html#" + product._id;
   editBtn.setAttribute("aria-label", "Edit " + product.title);
   setSvg(editBtn, ICON_EDIT);
 
   const viewBtn = document.createElement("a");
   viewBtn.className = "icon-btn icon-btn-sm";
-  viewBtn.href = "product.html?id=" + product._id;
+  viewBtn.href = "product.html#" + product._id;
   viewBtn.setAttribute("aria-label", "View " + product.title);
   setSvg(viewBtn, ICON_VIEW);
 

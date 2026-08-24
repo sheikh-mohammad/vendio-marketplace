@@ -29,7 +29,7 @@ function buildQueryString() {
 }
 
 function formatPrice(price) {
-  return "$" + Number(price).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  return "Rs " + Number(price).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
 
 function createProductCard(product) {
@@ -41,7 +41,7 @@ function createProductCard(product) {
 
   const link = document.createElement("a");
   link.className = "product-media";
-  link.href = "product.html?id=" + product._id;
+  link.href = "product.html#" + product._id;
 
   const img = document.createElement("img");
   img.src = product.image;
@@ -69,7 +69,7 @@ function createProductCard(product) {
   const title = document.createElement("h3");
   title.className = "product-title";
   const titleLink = document.createElement("a");
-  titleLink.href = "product.html?id=" + product._id;
+  titleLink.href = "product.html#" + product._id;
   titleLink.textContent = product.title;
   title.appendChild(titleLink);
 
